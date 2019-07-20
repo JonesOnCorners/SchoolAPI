@@ -5,13 +5,13 @@ from students.models import Student
 from students.serializers import StudentSerializer
 from rest_framework import mixins
 from rest_framework import generics
-from rest_framework.permissions import IsAuthenticated, IsAuthenticatedOrReadOnly
+from rest_framework.permissions import IsAuthenticated, IsAuthenticatedOrReadOnly, IsAdminUser 
 
 # Create your views here.
 
  #View to handle student creation          
 class StudentCreate(generics.CreateAPIView):
-    permission_classes  = [IsAuthenticated]
+    permission_classes  = [ IsAdminUser ]
     queryset = Student.objects.all()
     serializer_class = StudentSerializer
 
@@ -23,11 +23,13 @@ class StudentList(generics.ListAPIView):
 
 #View that handles displaying details of a single student  
 class StudentDetailView(generics.RetrieveAPIView):    
+    permission_classes  = [IsAuthenticated]
     queryset = Student.objects.all()
     serializer_class = StudentSerializer        
 
 #View to handle put request for individual student
 class StudentEditView(generics.RetrieveUpdateDestroyAPIView):    
+    permission_classes  = [IsAdminUser]
     queryset = Student.objects.all()
     serializer_class = StudentSerializer        
 
