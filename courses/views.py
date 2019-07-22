@@ -34,3 +34,7 @@ class DepartmentEditListView(RetrieveUpdateDestroyAPIView):
 class SubjectView(CreateAPIView):
     queryset = Subjects.objects.all()
     serializer_class = SubjectSerializer
+
+class SubjectListView(ListAPIView):
+    queryset = Subjects.objects.all()
+    serializer_class = SubjectSerializer
