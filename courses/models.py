@@ -1,18 +1,18 @@
 from django.db import models
+from department.models import Department
 
 
 
 
 class Subjects(models.Model):
     subject_name = models.TextField()
-
     def __str__(self):
         return self.subject_name
 
 class Courses(models.Model):
     course_name = models.TextField()
     course_departments = models.ForeignKey(
-             'Department',
+             Department,
              default = 1,
              on_delete = models.CASCADE,
              related_name  = 'course_names'
