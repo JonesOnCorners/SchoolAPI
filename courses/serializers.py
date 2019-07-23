@@ -1,6 +1,6 @@
 from rest_framework import serializers 
 from rest_framework.serializers import HyperlinkedModelSerializer, ModelSerializer
-from .models import Courses, Department, Subjects
+from .models import Courses,  Subjects
 
 
 class CourseSerializer(ModelSerializer):
@@ -9,11 +9,6 @@ class CourseSerializer(ModelSerializer):
         model = Courses
         fields = '__all__'
 
-class DepartmentSerializer(ModelSerializer):
-    
-    class Meta:
-        model = Department
-        fields = '__all__'
 
 class SubjectSerializer(ModelSerializer):    
     class Meta:

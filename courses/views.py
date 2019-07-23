@@ -1,11 +1,11 @@
 from django.shortcuts import render
-from .serializers import CourseSerializer, DepartmentSerializer, SubjectSerializer
+from .serializers import CourseSerializer,  SubjectSerializer
 from rest_framework.generics import (
     CreateAPIView, DestroyAPIView, 
     ListAPIView, 
     RetrieveAPIView,
     RetrieveUpdateDestroyAPIView)
-from courses.models import Courses, Department, Subjects
+from courses.models import Courses,  Subjects
 
 # Create your views here.
 
@@ -22,14 +22,6 @@ class CourseDestroyView(DestroyAPIView):
     queryset = Courses.objects.all()
     serializer_class = CourseSerializer
 
-
-class DepartmentCreateView(CreateAPIView):
-    queryset = Department.objects.all()
-    serializer_class = DepartmentSerializer
-
-class DepartmentEditListView(RetrieveUpdateDestroyAPIView):
-    queryset = Department.objects.all()
-    serializer_class = DepartmentSerializer
 
 class SubjectView(CreateAPIView):
     queryset = Subjects.objects.all()

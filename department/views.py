@@ -5,7 +5,7 @@ from rest_framework.generics import (
     ListAPIView, 
     RetrieveAPIView,
     RetrieveUpdateDestroyAPIView)
-from courses.models import Courses,  Subjects
+from courses.models import Courses, Subjects
 from department.models import Department
 
 
