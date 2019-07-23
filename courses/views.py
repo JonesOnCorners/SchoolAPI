@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .serializers import CourseSerializer,  SubjectSerializer
+from .serializers import CourseSerializer,  SubjectSerializer, CourseViewSerializer
 from rest_framework.generics import (
     CreateAPIView, DestroyAPIView, 
     ListAPIView, 
@@ -14,13 +14,13 @@ class CourseCreateView(CreateAPIView):
     serializer_class = CourseSerializer
 
 
-class CourseListView(RetrieveUpdateDestroyAPIView):
+class CourseListView(RetrieveAPIView):
     queryset = Courses.objects.all()
-    serializer_class = CourseSerializer
+    serializer_class = CourseViewSerializer
 
-class CourseDestroyView(DestroyAPIView):
+class CourseDestroyView(RetrieveUpdateDestroyAPIView):
     queryset = Courses.objects.all()
-    serializer_class = CourseSerializer
+    serializer_class = CourseViewSerializer
 
 
 class SubjectView(CreateAPIView):
