@@ -20,6 +20,7 @@ class Courses(models.Model):
     course_credits = models.IntegerField(default = '10')
     subjects = models.ManyToManyField(Subjects)
     
+    
 
 
 
