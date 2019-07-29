@@ -2,8 +2,6 @@ from django.db import models
 from department.models import Department
 
 
-
-
 class Subjects(models.Model):
     subject_name = models.TextField()
     def __str__(self):
@@ -19,13 +17,11 @@ class Courses(models.Model):
      )
     course_credits = models.IntegerField(default = '10')
     subjects = models.ManyToManyField(Subjects)
+
+    def __str__(self):
+        return self.course_name
     
-    
-
-
-
-    
-
+ 
 
 
 

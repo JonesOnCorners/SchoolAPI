@@ -26,3 +26,5 @@ class CourseDestroyView(RetrieveUpdateDestroyAPIView):
 class SubjectView(CreateAPIView):
     queryset = Subjects.objects.all()
     serializer_class = SubjectSerializer
+
+

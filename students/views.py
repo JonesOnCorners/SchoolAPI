@@ -2,7 +2,7 @@ from django.shortcuts import render
 from rest_framework.views import APIView
 from rest_framework.generics import ListCreateAPIView
 from students.models import Student
-from students.serializers import StudentSerializer
+from students.serializers import StudentSerializer, StudentDisplaySerializer
 from rest_framework import mixins
 from rest_framework import generics
 from rest_framework.permissions import IsAuthenticated, IsAuthenticatedOrReadOnly, IsAdminUser 
@@ -19,13 +19,13 @@ class StudentCreate(generics.CreateAPIView):
 class StudentList(generics.ListAPIView):
     permission_classes  = [IsAuthenticated]
     queryset = Student.objects.all()
-    serializer_class = StudentSerializer
+    serializer_class = StudentDisplaySerializer
 
 #View that handles displaying details of a single student  
 class StudentDetailView(generics.RetrieveAPIView):    
     permission_classes  = [IsAuthenticated]
     queryset = Student.objects.all()
-    serializer_class = StudentSerializer        
+    serializer_class = StudentDisplaySerializer        
 
 #View to handle put request for individual student
 class StudentEditView(generics.RetrieveUpdateDestroyAPIView):    

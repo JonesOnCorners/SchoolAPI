@@ -7,4 +7,5 @@ urlpatterns = [
     path('course/view/<int:pk>',CourseListView.as_view()),
     path('course/delete/<int:pk>',CourseDestroyView.as_view()),
     path('subject/create',SubjectView.as_view()),
+
 ]

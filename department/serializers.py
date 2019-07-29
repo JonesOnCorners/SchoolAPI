@@ -10,3 +10,5 @@ class DepartmentSerializer(ModelSerializer):
     class Meta:
         model = Department
         fields = '__all__'
+        #fields = ['department_name']
+        depth = 1

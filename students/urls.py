@@ -9,6 +9,6 @@ urlpatterns = [
     path('students/',StudentList.as_view()),
     path('students/<int:pk>/',StudentDetailView.as_view()),
     path('students/edit/<int:pk>/',StudentEditView.as_view()),
-    path('students/create/',StudentCreate.as_view()),
+    path('students/enroll/',StudentCreate.as_view()),
       
 ]
