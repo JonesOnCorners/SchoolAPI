@@ -6,6 +6,7 @@ class StudentSerializer(ModelSerializer):
         model = Student
         #fields = ['id','first_name','middle_name','last_name','address','email',]
         fields = '__all__'
+        
 
 class StudentDisplaySerializer(ModelSerializer):
     class Meta:
