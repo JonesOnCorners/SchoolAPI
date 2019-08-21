@@ -6,4 +6,4 @@ phases:
       # Install dependencies needed for running tests
       - pip install -r requirements/common.txt
     runtime-versions:
-        Python: 3.7
+        python: 3.7
